@@ -103,57 +103,83 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden hero-glow">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent/20">
-          {/* Floating Orbs */}
-          <div className="floating-orb top-20 left-10 w-72 h-72 bg-gradient-to-r from-accent/30 to-primary-400/30 animate-delay-100" />
-          <div className="floating-orb bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-primary-400/30 to-accent/30 animate-delay-500" />
-          <div className="floating-orb top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-purple-400/20 to-pink-400/20 animate-delay-700" />
-          <div className="floating-orb bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 animate-delay-300" />
-          
-          {/* Animated Grid Pattern */}
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dots.png')] opacity-5" />
-          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent/20 overflow-hidden">
+          {/* Floating Elements */}
+          <div className="absolute inset-0">
+            {/* Floating Cards */}
+            <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg animate-float-slow" />
+            <div className="absolute top-20 right-20 w-16 h-16 bg-accent/10 backdrop-blur-sm rounded-lg shadow-lg animate-float-slow animate-delay-1000" />
+            <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-primary-400/10 backdrop-blur-sm rounded-lg shadow-lg animate-float-slow animate-delay-2000" />
+            <div className="absolute top-1/3 right-1/3 w-12 h-12 bg-purple-400/10 backdrop-blur-sm rounded-lg shadow-lg animate-float-slow animate-delay-3000" />
+            
+            {/* Floating Dots */}
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-accent/30 rounded-full animate-float-up"
+                style={{
+                  left: `${10 + i * 12}%`,
+                  top: `${20 + (i % 3) * 20}%`,
+                  animationDelay: `${i * 0.5}s`,
+                  animationDuration: `${3 + Math.random() * 2}s`
+                }}
+              />
+            ))}
+            
+            {/* Geometric Shapes */}
+            <div className="absolute top-1/4 left-1/4 w-8 h-8 border-2 border-accent/20 rotate-45 animate-float-slow animate-delay-1500" />
+            <div className="absolute bottom-1/3 right-1/4 w-6 h-6 border-2 border-primary-400/20 rotate-12 animate-float-slow animate-delay-2500" />
+            <div className="absolute top-1/2 right-1/3 w-10 h-10 border-2 border-purple-400/20 animate-float-slow animate-delay-3500" />
+            
+            {/* Subtle Grid Lines */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent animate-slide-right" />
+              <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-400/20 to-transparent animate-slide-right animate-delay-500" />
+              <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/20 to-transparent animate-slide-right animate-delay-1000" />
+              <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent animate-slide-right animate-delay-1500" />
+            </div>
+          </div>
         </div>
         
         <div className="relative px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-2 flex flex-col items-center justify-center animate-slide-up">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-white/20 text-accent text-sm font-medium mb-6 backdrop-blur-sm">
-                <Sparkles className="w-4 h-4" />
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col items-center justify-center animate-slide-up text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/80 border border-white/20 text-accent text-xs md:text-sm font-medium mb-4 md:mb-6 backdrop-blur-sm">
+                <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
                 Trusted by 50+ Enterprise Clients
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 text-center">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
                 <span className="inline-block">
                   <span className="typewriter" style={{color: '#1f2937'}}>We Build</span>{' '}
                   <span className="text-gradient">AI-Powered Systems</span>{' '}
                   <span className="typewriter" style={{color: '#1f2937'}}>That Scale Your Business</span>
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-none leading-relaxed text-center">
+              <p className="text-sm md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-8 max-w-2xl lg:max-w-none leading-relaxed">
                 <span className="typewriter" style={{color: '#4b5563'}}>From intelligent automation to enterprise-grade SaaS, we engineer technology that drives measurable revenue growth and operational excellence.</span>
               </p>
-              <div className="flex flex-wrap gap-6 justify-center">
-                <Button to="/contact" variant="primary" className="bg-accent text-gray-900 hover:bg-accent-light border-0 text-lg px-8 py-4">
+              <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-8 md:mb-12">
+                <Button to="/contact" variant="primary" className="bg-accent text-gray-900 hover:bg-accent-light border-0 text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto">
                   Book a Call
                 </Button>
-                <Button to="/projects" variant="outline" className="border-gray-200 text-gray-900 hover:bg-gray-100 text-lg px-8 py-4">
+                <Button to="/projects" variant="outline" className="border-gray-200 text-gray-900 hover:bg-gray-100 text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto">
                   View Our Work
                 </Button>
               </div>
               
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200">
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-gray-900">50+</div>
-                  <div className="text-sm text-gray-600 mt-1">Projects Delivered</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 w-full max-w-lg md:max-w-none">
+                <div className="text-center">
+                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">50+</div>
+                  <div className="text-xs md:text-sm text-gray-600 mt-1">Projects Delivered</div>
                 </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-gray-900">$10M+</div>
-                  <div className="text-sm text-gray-600 mt-1">Client Revenue Impact</div>
+                <div className="text-center">
+                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">$10M+</div>
+                  <div className="text-xs md:text-sm text-gray-600 mt-1">Client Revenue Impact</div>
                 </div>
-                <div>
-                  <div className="text-2xl md:text-3xl font-bold text-gray-900">99.9%</div>
-                  <div className="text-sm text-gray-600 mt-1">Uptime Delivered</div>
+                <div className="text-center">
+                  <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">99.9%</div>
+                  <div className="text-xs md:text-sm text-gray-600 mt-1">Uptime Delivered</div>
                 </div>
               </div>
             </div>

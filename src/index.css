@@ -173,6 +173,116 @@
       border-color: transparent;
     }
   }
+
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes float-up {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.5;
+    }
+    90% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(calc(100vh + 100px));
+      opacity: 0;
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes light-beam {
+    0%, 100% {
+      opacity: 0;
+      transform: translateX(-100%) scaleX(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(0) scaleX(1);
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes aurora-1 {
+    0%, 100% {
+      transform: translateY(0) scaleY(1);
+    }
+    50% {
+      transform: translateY(-20px) scaleY(1.2);
+    }
+  }
+
+  @keyframes aurora-2 {
+    0%, 100% {
+      transform: translateY(0) scaleY(1);
+    }
+    50% {
+      transform: translateY(-30px) scaleY(1.3);
+    }
+  }
+
+  @keyframes aurora-3 {
+    0%, 100% {
+      transform: translateY(0) scaleY(1);
+    }
+    50% {
+      transform: translateY(-25px) scaleY(1.25);
+    }
+  }
 }
 
 @layer utilities {
@@ -181,4 +291,76 @@
   .animate-delay-300 { animation-delay: 300ms; }
   .animate-delay-400 { animation-delay: 400ms; }
   .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-700 { animation-delay: 700ms; }
+  .animate-delay-1000 { animation-delay: 1000ms; }
+  .animate-delay-1200 { animation-delay: 1200ms; }
+  .animate-delay-1500 { animation-delay: 1500ms; }
+  .animate-delay-1700 { animation-delay: 1700ms; }
+  .animate-delay-2000 { animation-delay: 2000ms; }
+  .animate-delay-2200 { animation-delay: 2200ms; }
+  .animate-delay-2500 { animation-delay: 2500ms; }
+  .animate-delay-2700 { animation-delay: 2700ms; }
+  .animate-delay-3000 { animation-delay: 3000ms; }
+  .animate-delay-3200 { animation-delay: 3200ms; }
+  .animate-delay-3500 { animation-delay: 3500ms; }
+  .animate-delay-3800 { animation-delay: 3800ms; }
+  .animate-delay-4000 { animation-delay: 4000ms; }
+  .animate-delay-4200 { animation-delay: 4200ms; }
+  .animate-delay-4300 { animation-delay: 4300ms; }
+  .animate-float-up { animation: float-up 12s linear infinite; }
+  .animate-slide-down { animation: slide-down 20s linear infinite; }
+  .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+  .animate-reverse { animation-direction: reverse; }
+  .animate-light-beam { animation: light-beam 8s ease-in-out infinite; }
+  .animate-sparkle { animation: sparkle 3s ease-in-out infinite; }
+  .animate-aurora-1 { animation: aurora-1 15s ease-in-out infinite; }
+  .animate-aurora-2 { animation: aurora-2 18s ease-in-out infinite; }
+  .animate-aurora-3 { animation: aurora-3 20s ease-in-out infinite; }
+
+  /* Anti-gravity animations */
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-15px) rotate(2deg);
+    }
+    50% {
+      transform: translateY(-25px) rotate(-1deg);
+    }
+    75% {
+      transform: translateY(-15px) rotate(1deg);
+    }
+  }
+
+  @keyframes float-up {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-right {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
 }
