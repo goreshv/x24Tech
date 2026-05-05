@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-gray-50 text-gray-900 transition-colors duration-300;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-primary-900;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-strong {
+    @apply bg-white/90 backdrop-blur-2xl border border-white/30;
+  }
+
+  .glass-morphism {
+    @apply bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-2xl border border-white/20 shadow-xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-accent bg-clip-text text-transparent;
+  }
+
+  .text-gradient-hot {
+    @apply bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-600 to-accent hover:from-primary-700 hover:to-accent text-white font-semibold rounded-lg 
+           transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:scale-105 
+           active:scale-95 flex items-center gap-2 relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-primary-600 text-primary-600 
+           hover:bg-gradient-to-r hover:from-primary-600 hover:to-accent hover:text-white font-semibold rounded-lg 
+           transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20;
+  }
+
+  .card-glow {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:scale-105;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-20;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(to right, #f0f9ff, #e0f2fe);
+    border-radius: 0.75rem;
+  }
+  
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: 0.85rem;
+    padding: 1px;
+    background: linear-gradient(135deg, #0ea5e9, #06b6d4, #22d3ee);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+  }
+
+  .hero-glow {
+    @apply relative;
+  }
+
+  .hero-glow::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, rgba(6, 182, 212, 0.04) 50%, transparent 70%);
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  .floating-orb {
+    @apply absolute rounded-full blur-3xl opacity-40;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.15), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* Typewriter Animation */
+  .typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite alternate;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
