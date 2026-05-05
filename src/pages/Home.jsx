@@ -155,9 +155,6 @@ export default function Home() {
                   <span className="typewriter" style={{color: '#1f2937'}}>That Scale Your Business</span>
                 </span>
               </h1>
-              <p className="text-sm md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-8 max-w-2xl lg:max-w-none leading-relaxed">
-                <span className="typewriter" style={{color: '#4b5563'}}>From intelligent automation to enterprise-grade SaaS, we engineer technology that drives measurable revenue growth and operational excellence.</span>
-              </p>
               <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-8 md:mb-12">
                 <Button to="/contact" variant="primary" className="bg-accent text-gray-900 hover:bg-accent-light border-0 text-base md:text-lg px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto">
                   Book a Call
