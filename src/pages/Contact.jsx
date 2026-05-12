@@ -60,8 +60,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Email Us</div>
-                    <a href="mailto:hello@x24technologies.com" className="text-gray-600 hover:text-accent transition-colors">
-                      hello@x24technologies.com
+                    <a href="mailto:support@x24tech.com" className="text-gray-600 hover:text-accent transition-colors">
+                      support@x24tech.com
                     </a>
                   </div>
                 </div>
@@ -72,8 +72,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Call Us</div>
-                    <a href="tel:+919876543210" className="text-gray-600 hover:text-accent transition-colors">
-                      +91 98765 43210
+                    <a href="tel:+917066386938" className="text-gray-600 hover:text-accent transition-colors">
+                      +91 70663 86938
                     </a>
                   </div>
                 </div>

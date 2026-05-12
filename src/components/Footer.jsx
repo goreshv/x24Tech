@@ -15,12 +15,6 @@ const footerLinks = {
     { name: 'Blog', path: '/blog' },
     { name: 'Careers', path: '/contact' },
   ],
-  Resources: [
-    { name: 'Documentation', path: '#' },
-    { name: 'Case Studies', path: '/projects' },
-    { name: 'Privacy Policy', path: '#' },
-    { name: 'Terms of Service', path: '#' },
-  ],
 }
 
 export default function Footer() {
@@ -40,7 +34,7 @@ export default function Footer() {
               Building AI-powered systems that scale businesses. We transform complex challenges into elegant, intelligent solutions.
             </p>
             <div className="flex gap-4">
-              {[Linkedin, Twitter, Github].map((Icon, i) => (
+              {[Linkedin, Twitter].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all">
                   <Icon className="w-5 h-5" />
                 </a>
@@ -70,11 +64,11 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-200 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="flex items-center gap-3 text-sm text-gray-600">
             <Mail className="w-4 h-4 text-accent" />
-            hello@x24technologies.com
+            support@x24tech.com
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-600">
             <Phone className="w-4 h-4 text-accent" />
-            +91 98765 43210
+            +91 70663 86938
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-600">
             <MapPin className="w-4 h-4 text-accent" />
